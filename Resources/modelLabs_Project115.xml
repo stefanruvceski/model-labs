@@ -1,0 +1,31 @@
+for(i=0; i<n; i++) {
+        strcpy(analize[i].ime, pacijenti[i].ime);
+        strcpy(analize[i].prezime, pacijenti[i].prezime);
+
+        if(strcmp(tip_analize,"Holesterol") == 0){
+			if(pacijenti[i].holesterol < 5.2)
+				analize[i].Upozorenje = '-';
+			else
+				analize[i].Upozorenje = '+';
+		}
+		else if(strcmp(tip_analize,"Pritisak") == 0){
+			if(pacijenti[i].Pritisak <120 && pacijenti[i].Pritisak >= 90)
+				analize[i].Upozorenje = '-';
+			else
+				analize[i].Upozorenje = '+';
+		}
+		else if(strcmp(tip_analize,"Secer") == 0){
+			if(pacijenti[i].holesterol < 5.6 && pacijenti[i].Secer >= 3.9)
+				analize[i].Upozorenje = '-';
+			else
+				analize[i].Upozorenje = '+';
+		}
+    }
+	
+typedef struct analiza_st {
+    char upozorenje;
+    char ime[MAX_IME];
+    char prezime[MAX_IME];
+}analiza;
+
+analiza
